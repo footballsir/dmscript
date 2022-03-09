@@ -1,14 +1,14 @@
-//fetch tokens
-const keys = await (await fetch("https://fs3e9r.api.larkfn.com/get_ig_style_keys")).json()
+//fetch tokens from database
+const keys = await (await fetch("https://fakeapi.com")).json()
 
 //target selected frame
 const target = selection()[0];
 
 //import all style to the Figma file
 //for performance optimization we associate all styles on a frame and import the frame into the existing file
-const lightCarrier = await figma.importComponentByKeyAsync("404e671bcaea710190b5c52488995479477894e8")
-const darkCarrier = await figma.importComponentByKeyAsync("8600499395bad2340939755a8c50c01e51650bd7")
-const udCarrier = await figma.importComponentByKeyAsync("bde44acb3a0dfcbf4a0e81e637cb5f5b586f3160")
+const lightCarrier = await figma.importComponentByKeyAsync("key of light mode carrier")
+const darkCarrier = await figma.importComponentByKeyAsync("key of dark mode carrier")
+const udCarrier = await figma.importComponentByKeyAsync("key of ud token carrier")
 
 if ("children" in target) {
     const layers = target.findAll()
